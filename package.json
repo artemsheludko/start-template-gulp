@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/artemsheludko/start-template-gulp",
   "author": "Artem Sheludko",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
 }
