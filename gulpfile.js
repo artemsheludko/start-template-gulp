@@ -3,4 +3,5 @@ var gulp = require('gulp'),
     prefix = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
     uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin');
+    imagemin = require('gulp-imagemin'),
+    browserSync = require('browser-sync');
