@@ -1,0 +1,9 @@
+{
+  "name": "template-project_with_gulp-sass-browsersync",
+  "version": "1.0.0",
+  "description": "Start Template",
+  "main": "index.js",
+  "repository": "https://github.com/artemsheludko/start-template-gulp",
+  "author": "Artem Sheludko",
+  "license": "MIT"
+}
