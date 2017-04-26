@@ -5,8 +5,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     browserSync = require('browser-sync'),
-    notify = require('gulp-notify'),
-    cache = require('gulp-cache');
+    notify = require('gulp-notify');
 
 // BROWSERSYNC
 gulp.task('browser-sync', function() {
