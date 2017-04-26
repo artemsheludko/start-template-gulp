@@ -44,12 +44,19 @@ gulp.task('fonts', function() {
         .pipe(gulp.dest('build/fonts'));
 });
 
+gulp.task('img', function() {
+    return gulp.src('src/img/**/*.*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('build/img'));
+});
+
 // Watch
-gulp.task('watch', ['html', 'sass', 'js', 'fonts', 'browser-sync'], function() {
+gulp.task('watch', ['html', 'sass', 'js', 'fonts', 'img', 'browser-sync'], function() {
     gulp.watch('src/*.html', ['html']);
     gulp.watch('src/css/**/*.scss', ['sass']);
     gulp.watch('src/js/**/*.js', ['js']);
     gulp.watch('src/fonts/**/*.*', ['fonts']);
+    gulp.watch('src/img/**/*.*', ['img']);
 });
 
 // Default task
