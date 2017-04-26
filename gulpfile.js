@@ -28,7 +28,7 @@ gulp.task('html', function() {
 
 // SASS
 gulp.task('sass', function() {
-    return gulp.src('src/css/scss/style.scss')
+    return gulp.src('src/css/scss/*.scss')
         .pipe(sass({outputStyle: 'expanded'}).on("error", notify.onError()))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         // .pipe(cssnano({zindex: false})) // Optional, comment out when debugging
@@ -39,7 +39,7 @@ gulp.task('sass', function() {
 
 // JS
 gulp.task('js', function() {
-    return gulp.src('src/js/main.js')
+    return gulp.src('src/js/*.js')
         .pipe(rigger())
         .pipe(uglify())
         .pipe(gulp.dest('build/js'))
