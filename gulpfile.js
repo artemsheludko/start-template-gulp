@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     browserSync = require('browser-sync'),
     notify = require('gulp-notify'),
+    rigger = require('gulp-rigger');
     rimraf = require('rimraf');
 
 // BROWSERSYNC
@@ -39,6 +40,7 @@ gulp.task('sass', function() {
 // JS
 gulp.task('js', function() {
     return gulp.src('src/js/main.js')
+        .pipe(rigger())
         .pipe(uglify())
         .pipe(gulp.dest('build/js'))
         .pipe(browserSync.reload({stream: true}));
