@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     prefix = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
     uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
     imagemin = require('gulp-imagemin'),
     browserSync = require('browser-sync'),
     notify = require('gulp-notify'),
@@ -31,17 +32,25 @@ gulp.task('sass', function() {
     return gulp.src('src/css/scss/*.scss')
         .pipe(sass({outputStyle: 'expanded'}).on("error", notify.onError()))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        // .pipe(cssnano({zindex: false})) // Optional, comment out when debugging
+        // .pipe(cssnano({zindex: false})) // Minimize css (optional)
         .pipe(gulp.dest('build/css'))
         .pipe(browserSync.reload({stream: true}))
         .pipe(gulp.dest('src/css'));
 });
 
 // JS
-gulp.task('js', function() {
-    return gulp.src('src/js/*.js')
+gulp.task('libs', function() {
+    return gulp.src('src/js/libs.js')
         .pipe(rigger())
+        .pipe(concat('libs.min.js'))
         .pipe(uglify())
+        .pipe(gulp.dest('build/js'))
+});
+
+gulp.task('js', ['libs'], function() {
+    return gulp.src('src/js/main.js')
+        // .pipe(rigger())
+        // .pipe(uglify()) // Minimize main.js (optional)
         .pipe(gulp.dest('build/js'))
         .pipe(browserSync.reload({stream: true}));
 });
