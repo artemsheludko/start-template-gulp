@@ -5,7 +5,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     browserSync = require('browser-sync'),
-    notify = require('gulp-notify');
+    notify = require('gulp-notify'),
+    rimraf = require('rimraf');
 
 // BROWSERSYNC
 gulp.task('browser-sync', function() {
@@ -54,6 +55,11 @@ gulp.task('img', function() {
     return gulp.src('src/img/**/*.*')
         .pipe(imagemin())
         .pipe(gulp.dest('build/img'));
+});
+
+// CLEAR BUILD
+gulp.task('clear', function(cb) {
+    rimraf('./build', cb);
 });
 
 // WATCH
