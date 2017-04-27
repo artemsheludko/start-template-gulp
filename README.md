@@ -1,6 +1,6 @@
 # How to Use
 - Install [NodeJs](http://nodejs.org/), [Yarn](https://yarnpkg.com/), [GulpJs](http://gulpjs.com/)
-- [Download](https://github.com/artemsheludko/start-template-gulp/archive/master.zip) start-template-gulp
+- [Download](https://github.com/artemsheludko/start-template-gulp/archive/master.zip) start-template-gulp from Github
 - Install modules: yarn
 - Run the project: gulp
 
