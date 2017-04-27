@@ -6,4 +6,4 @@
 
 ## Gulp tasks
 - **gulp:** run default gulp task (html, sass, libs, js, fonts, img, watch, browserSync);
-- **clear:** delete build folder.
+- **clear:** clear folder build.
